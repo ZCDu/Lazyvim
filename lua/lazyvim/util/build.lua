@@ -215,7 +215,7 @@ To use this, add it to your **lazy.nvim** imports:
 ```lua title="lua/config/lazy.lua" {4}
 require("lazy").setup({
   spec = {
-    { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+    { "ZCDu/LazyVim", import = "lazyvim.plugins" },
     { import = "%s" },
     { import = "plugins" },
   },
