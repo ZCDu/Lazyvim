@@ -8,11 +8,18 @@ return {
     cmd = "Neotree",
     keys = {
       {
-        "<N>",
+        "<C-n>",
         function()
           require("neo-tree.command").execute({ toggle = true, dir = require("lazyvim.util").get_root() })
         end,
         desc = "Explorer NeoTree (root dir)",
+      },
+      {
+        "N",
+        function()
+          require("neo-tree.command").execute({ toggle = true, dir = vim.loop.cwd() })
+        end,
+        desc = "Explorer NeoTree (cwd)",
       },
       { "<leader>e", "<leader>fe", desc = "Explorer NeoTree (root dir)", remap = true },
       { "<leader>E", "<leader>fE", desc = "Explorer NeoTree (cwd)",      remap = true },
@@ -202,7 +209,6 @@ return {
         ["["] = { name = "+prev" },
         ["<leader><tab>"] = { name = "+tabs" },
         ["<leader>b"] = { name = "+buffer" },
-        ["<leader>c"] = { name = "+code" },
         ["<leader>f"] = { name = "+file/find" },
         ["<leader>g"] = { name = "+git" },
         ["<leader>gh"] = { name = "+hunks" },
